@@ -1,5 +1,8 @@
 # rdmty_mod
-A mod of the [rdmty theme](https://github.com/billyvg/OverlayPlugin-themes)
+A mod of the [rdmty](https://github.com/billyvg/OverlayPlugin-themes) theme.
 
-###Changing the Character Name
-.\css\rdmty.css line 165
+### Required Font
+[Roboto Condensed](https://fonts.google.com/specimen/Roboto+Condensed)
+
+### Changing the Character Name
+Edit `.\css\rdmty.css` line 165.
