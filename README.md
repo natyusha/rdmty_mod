@@ -5,4 +5,4 @@ A mod of the [rdmty](https://github.com/billyvg/OverlayPlugin-themes) theme.
 [Roboto Condensed](https://fonts.google.com/specimen/Roboto+Condensed)
 
 ### Changing the Character Name
-Edit `.\css\rdmty.css` line 165.
+Edit `.\css\rdmty_mod.css` line 186.
