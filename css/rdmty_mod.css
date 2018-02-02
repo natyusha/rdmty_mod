@@ -269,6 +269,9 @@ li:last-child {
 .show-job-colors .sam .bar {
     background-color: #8e775c;
 }
+.show-job-colors .limit .bar {
+    background-color: #1c1c1c;
+}
 .job-icon {
     padding-left: 2px;
     float: left;

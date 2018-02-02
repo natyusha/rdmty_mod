@@ -590,6 +590,9 @@ var Combatants = function (_React$Component4) {
                 combatant = isDataArray ? this.props.data[i] : this.props.data[names[i]];
                 stats = null;
 
+            if (combatant.name.indexOf("Limit Break") === 0)
+                combatant.Job = "limit break";
+
                 isSelf = combatant.name === 'YOU' || combatant.name === 'You';
 
                 if (combatant.Job !== "") {
