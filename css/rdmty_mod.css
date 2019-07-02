@@ -218,7 +218,7 @@ li:last-child {
     top: 0;
     bottom: 0;
     transition: width .6s ease-in-out;
-    opacity: 0.9;
+    opacity: 1;
 }
 
 .show-job-colors .pgl .bar, .show-job-colors .mnk .bar {
@@ -269,8 +269,17 @@ li:last-child {
 .show-job-colors .sam .bar {
     background-color: #8e775c;
 }
+.show-job-colors .blu .bar {
+    background-color: #3752d8;
+}
 .show-job-colors .limit .bar {
     background-color: #1c1c1c;
+}
+.show-job-colors .gnb .bar {
+    background-color: #d3c23c;
+}
+.show-job-colors .dnc .bar {
+    background-color: #fad7b6;
 }
 .job-icon {
     padding-left: 2px;
