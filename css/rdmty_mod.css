@@ -15,7 +15,6 @@ html {
     background-position: bottom right;
     background-repeat: no-repeat;
 }
-
 #container {
     font-family: "Roboto Condensed";
     font-size: 18px;
@@ -26,14 +25,12 @@ html {
 #source {
     display: none;
 }
-
 h3 {
     font-size: 24px;
     font-weight: normal;
     padding: 0px 8px 4px 4px;
     margin:0;
 }
-
 ul {
     list-style-type: none;
     margin: 0;
@@ -176,7 +173,6 @@ li {
 li:last-child {
     margin-bottom: 0;
 }
-
 .self .character-name {
     visibility: hidden;
     margin-right: -30px;
@@ -220,67 +216,25 @@ li:last-child {
     transition: width .6s ease-in-out;
     opacity: 1;
 }
-
-.show-job-colors .pgl .bar, .show-job-colors .mnk .bar {
-    background-color: #b38915;
-}
-.show-job-colors .acn .bar, .show-job-colors .smn .bar {
-    background-color: #33670b;
-}
-.show-job-colors .lnc .bar, .show-job-colors .drg .bar {
-    background-color: #3752d8;
-}
-.show-job-colors .cnj .bar, .show-job-colors .whm .bar {
-    background-color: #fff;
-}
-.show-job-colors .thm .bar, .show-job-colors .blm .bar {
-    background-color: #674598;
-}
-.show-job-colors .nin .bar, .show-job-colors .rog .bar {
-    background-color: #ee2e48;
-}
-.show-job-colors .sch .bar {
-    background-color: #4442a8;
-}
-.show-job-colors .arc .bar, .show-job-colors .brd .bar {
-    background-color: #adc551;
-}
-.show-job-colors .gla .bar, .show-job-colors .pld .bar {
-    background-color: #7b9aa2;
-}
-.show-job-colors .mrd .bar, .show-job-colors .war .bar {
-    background-color: #a91a16;
-}
-.show-job-colors .mrd .bar, .show-job-colors .war .bar {
-    background-color: #a91a16;
-}
-.show-job-colors .drk .bar {
-    background-color: #4a2829;
-}
-.show-job-colors .ast .bar {
-    background-color: #f6da6a;
-}
-.show-job-colors .mch .bar {
-    background-color: #6bcec2;
-}
-.show-job-colors .rdm .bar {
-    background-color: #6c2c43;
-}
-.show-job-colors .sam .bar {
-    background-color: #8e775c;
-}
-.show-job-colors .blu .bar {
-    background-color: #3752d8;
-}
-.show-job-colors .limit .bar {
-    background-color: #1c1c1c;
-}
-.show-job-colors .gnb .bar {
-    background-color: #d3c23c;
-}
-.show-job-colors .dnc .bar {
-    background-color: #fad7b6;
-}
+.show-job-colors .gla .bar, .show-job-colors .pld .bar {background-color: #a8d2e6}
+.show-job-colors .mrd .bar, .show-job-colors .war .bar {background-color: #cf2621}
+.show-job-colors .drk .bar {background-color: #d126cc}
+.show-job-colors .gnb .bar {background-color: #796d30}
+.show-job-colors .cnj .bar, .show-job-colors .whm .bar {background-color: #fff0dc}
+.show-job-colors .sch .bar {background-color: #8657ff}
+.show-job-colors .ast .bar {background-color: #ffe74a}
+.show-job-colors .pgl .bar, .show-job-colors .mnk .bar {background-color: #d69c00}
+.show-job-colors .lnc .bar, .show-job-colors .drg .bar {background-color: #4164cd}
+.show-job-colors .rog .bar, .show-job-colors .nin .bar {background-color: #af1964}
+.show-job-colors .sam .bar {background-color: #e46d04}
+.show-job-colors .arc .bar, .show-job-colors .brd .bar {background-color: #91ba5e}
+.show-job-colors .mch .bar {background-color: #6ee1d6}
+.show-job-colors .dnc .bar {background-color: #e2b0af}
+.show-job-colors .thm .bar, .show-job-colors .blm .bar {background-color: #a579d6}
+.show-job-colors .acn .bar, .show-job-colors .smn .bar {background-color: #2d9b78}
+.show-job-colors .rdm .bar {background-color: #e87b7b}
+.show-job-colors .blu .bar {background-color: #3752d8}
+.show-job-colors .limit .bar {background-color: #1c1c1c}
 .job-icon {
     padding-left: 2px;
     float: left;
