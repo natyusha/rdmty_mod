@@ -255,32 +255,6 @@ var Header = function (_React$Component3) {
             if (self == undefined) {
                 DataSource = encounter;
             }
-            // Calculate the drect hit % based off of the combatant list. This is not efficient and needs to be removed
-            // Once the encounter object is fixed to properly include this info.
-            var datalength = 0;
-            var DirectHitPct = 0;
-            var CritDirectHitPct = 0;
-            if (this.state.group) {
-                if (data !== undefined) {
-                    for (var x in data) {
-                        if (!data.hasOwnProperty(x)) continue;
-                        DirectHitPct += parseFloat(data[x].DirectHitPct.substring(0, data[x].DirectHitPct.length - 1));
-                        CritDirectHitPct += parseFloat(data[x].CritDirectHitPct.substring(0, data[x].CritDirectHitPct.length - 1));
-                        datalength++;
-                    }
-                    if (DirectHitPct > 0) {
-                        DirectHitPct = parseFloat(DirectHitPct / datalength);
-                    }
-                    if (CritDirectHitPct > 0) {
-                        CritDirectHitPct = parseFloat(CritDirectHitPct / datalength);
-                    }
-                }
-            } else {
-                if (self != undefined) {
-                    DirectHitPct = self.DirectHitPct;
-                    CritDirectHitPct = self.CritDirectHitPct;
-                }
-            }
 
             return React.createElement(
                 'div',
@@ -300,13 +274,13 @@ var Header = function (_React$Component3) {
                                 { className: 'dropdown-menu encounters-list-dropdown ' + (this.state.showEncountersList ? '' : 'hidden') },
                                 React.createElement(
                                     'div',
-                                    { onClick: this.props.onSelectEncounter.bind(this, null) },
+                                    { id: "currentFight", onMouseDown: this.props.onSelectEncounter.bind(this, null), onMouseUp: this.props.onSelectEncounter.bind(this, null) },
                                     'Current Fight'
                                 ),
                                 EncountersArray.map(function (encounter, i) {
                                     return React.createElement(
                                         'div',
-                                        { key: i, onClick: this.props.onSelectEncounter.bind(this, i) },
+                                        { key: i, onMouseDown: this.props.onSelectEncounter.bind(this, i), onMouseUp: this.props.onSelectEncounter.bind(this, null) },
                                         encounter.Encounter.title
                                     );
                                 }.bind(this))
@@ -366,7 +340,7 @@ var Header = function (_React$Component3) {
                 React.createElement(
                     'div',
                     { className: 'extra-details' },
-                    this.props.currentView == "damage" ? React.createElement(
+                    this.props.currentView == "damage" || "healing" || "tanking" ? React.createElement(
                         'div',
                         { className: 'data-set-view-switcher clearfix', onClick: this.handleToggleStats.bind(this) },
                         React.createElement(
@@ -405,7 +379,21 @@ var Header = function (_React$Component3) {
                                 { className: 'value ff-text-damage' },
                                 formatNumber(DataSource.encdps)
                             )
-                        ),                        
+                        ),
+                        React.createElement(
+                            'div',
+                            { className: 'cell' },
+                            React.createElement(
+                                'span',
+                                { className: 'label ff-header' },
+                                'Crit%'
+                            ),
+                            React.createElement(
+                                'span',
+                                { className: 'value ff-text-damage' },
+                                formatNumber(parseFloat(DataSource.crithits / DataSource.hits * 100)) + "%"
+                            )
+                        ),
                         React.createElement(
                             'div',
                             { className: 'cell' },
@@ -418,52 +406,6 @@ var Header = function (_React$Component3) {
                                 'span',
                                 { className: 'value ff-text-damage' },
                                 DataSource.maxhit
-                            )
-                        )
-                    ),
-                    React.createElement(
-                        'div',
-                        { className: 'extra-row damage' },
-                        React.createElement(
-                            'div',
-                            { className: 'cell' },
-                            React.createElement(
-                                'span',
-                                { className: 'label ff-header' },
-                                'Crit%'
-                            ),
-                            React.createElement(
-                                'span',
-                                { className: 'value ff-text' },
-                                formatNumber(parseFloat(DataSource.crithits / DataSource.hits * 100)) + "%"
-                            )
-                        ),
-                        React.createElement(
-                            'div',
-                            { className: 'cell' },
-                            React.createElement(
-                                'span',
-                                { className: 'label ff-header' },
-                                'Dhit%'
-                            ),
-                            React.createElement(
-                                'span',
-                                { className: 'value ff-text' },
-                                formatNumber(DirectHitPct) + "%"
-                            )
-                        ),
-                        React.createElement(
-                            'div',
-                            { className: 'cell' },
-                            React.createElement(
-                                'span',
-                                { className: 'label ff-header' },
-                                'DhitCrit%'
-                            ),
-                            React.createElement(
-                                'span',
-                                { className: 'value ff-text' },
-                                formatNumber(CritDirectHitPct) + "%"
                             )
                         )
                     ),
@@ -827,9 +769,9 @@ var DamageMeter = function (_React$Component5) {
 DamageMeter.defaultProps = {
     chartViews: ['damage', 'healing', 'tanking'],
     chartHeader: [
-        'DPS\u2007\u2007 DMG\u2007\u2007\u2007DHIT \u2007\u2007CRIT \u2007\u2007\u2007DHC',
-        'HPS \u2007\u2007HEAL\u2007\u2007OVER\u2007\u2007\u2007CRIT',
-        'KO\u2007\u2007PARRY\u2007BLOCK'
+        'DPS\u2007\u2007\u2007DMG\u2007\u2007\u2007DHIT\u2007\u2007\u2007CRIT \u2007\u2007\u2007DHC',
+        'HPS\u2007\u2007HEAL \u2007\u2007OVER \u2007\u2007\u2007CRIT',
+        'KO \u2007\u2007PARRY \u2007BLOCK'
     ],
     parseData: {},
     noJobColors: false

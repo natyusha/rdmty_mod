@@ -179,12 +179,13 @@ li:last-child {
 }
 .self .character-name:before {
     visibility: visible;
-    content: "Natyusha Nynaj";
+    content: "Self";
     color: #fff;
 }
 .self .character-star:after {
+    margin-left:2px;
     visibility: visible;
-    content: " ★";
+    content: "★";
     color: #ffefb4;
 }
 .text-overlay {
@@ -298,7 +299,7 @@ li:last-child {
 .dropdown-menu {
     background-color: rgba(0, 0, 0, 0.6);
     position: absolute;
-    top: 20px;
+    top: 25px;
     left: 0px;
     padding: 2px 4px;
     z-index: 100;
