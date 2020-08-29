@@ -516,7 +516,7 @@ var Combatants = function (_React$Component4) {
         key: 'render',
         value: function render() {
             var rows = [];
-            var maxRows = 12;
+            var maxRows = 25;
             var isDataArray = _.isArray(this.props.data);
             var dataArray = isDataArray ? this.props.data : Object.keys(this.props.data);
             var limit = Math.max(dataArray.length, maxRows);
